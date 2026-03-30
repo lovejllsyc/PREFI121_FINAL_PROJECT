@@ -46,7 +46,7 @@ public class REGISTRATION_FORM extends JFrame {
                             break;
                         }
                     }
-                    br.close()
+                    br.close();
                 } catch (IOException ex) {}
 
                 if (exists) {
