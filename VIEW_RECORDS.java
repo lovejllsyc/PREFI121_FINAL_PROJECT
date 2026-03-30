@@ -52,7 +52,7 @@ public class VIEW_RECORDS extends JFrame {
 
         viewPenaltiesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                loanshistor.setText("");
+                loanshistory.setText("");
                 boolean hasLoans = false;
 
                 try (BufferedReader br = new BufferedReader(new FileReader("loans.txt"))) {
