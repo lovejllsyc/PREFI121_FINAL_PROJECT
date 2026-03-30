@@ -15,6 +15,8 @@ public class REGISTRATION_FORM extends JFrame {
         setSize(600, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setContentPane(RegistrationPanel);
+        setVisible(true);
 
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
