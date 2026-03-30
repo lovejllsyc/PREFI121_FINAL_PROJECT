@@ -20,6 +20,8 @@ public class VIEW_RECORDS extends JFrame {
         setSize(600, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setContentPane(dashboard);
+        setVisible(true);
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate today = LocalDate.now();
