@@ -18,13 +18,14 @@ public class REGISTRATION_FORM extends JFrame {
 
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                new LOG_IN_FORM();
                 dispose();
             }
         });
 
         registerButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String usrname = txtUsername.getText();
+                String username = txtUsername.getText();
                 String password = new String(txtPasswordField.getPassword());
 
                 if (username.equals("") || password.equals("")) {
