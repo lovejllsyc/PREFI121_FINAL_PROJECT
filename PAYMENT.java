@@ -39,7 +39,6 @@ public class PAYMENT extends JFrame {
         setContentPane(PaymentPanel);
         setVisible(true);
 
-        // Save loan automatically
         try {
             FileWriter fw = new FileWriter("loans.txt", true);
             fw.write(username + "," + loanAmount + "," + totalAmount + "\n");
@@ -61,7 +60,6 @@ public class PAYMENT extends JFrame {
                     return;
                 }
 
-                // Determine loan term in months
                 int termMonths;
                 switch (loanPeriod) {
                     case "6 months" -> termMonths = 6;
@@ -72,7 +70,6 @@ public class PAYMENT extends JFrame {
 
                 double monthlyPayment = totalAmount / termMonths;
 
-                // Ask user how many payments have been completed
                 String input = JOptionPane.showInputDialog("How many payments have you completed? (numbers only)");
                 int paymentsMade = 0;
                 try {
@@ -82,7 +79,6 @@ public class PAYMENT extends JFrame {
                     paymentsMade = 0;
                 }
 
-                // Calculate next due date
                 LocalDate nextDueDate = startDate.plusMonths(paymentsMade + 1);
                 double remainingBalance = totalAmount - (monthlyPayment * paymentsMade);
 
