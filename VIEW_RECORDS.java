@@ -27,7 +27,7 @@ public class VIEW_RECORDS extends JFrame {
         viewLoansButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 loanshistory.setText("");
-                boolean hasLoans = false
+                boolean hasLoans = false;
 
                 try (BufferedReader br = new BufferedReader(new FileReader("loans.txt"))) {
                     String line;
@@ -105,3 +105,4 @@ public class VIEW_RECORDS extends JFrame {
             }
         });
     }
+}
