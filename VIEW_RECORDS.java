@@ -64,10 +64,20 @@ public class VIEW_RECORDS extends JFrame {
 
                             double totalAmount = Double.parseDouble(data[2]);
 
-                            int loanPeriod = (data.length >= 5) ? Integer.parseInt(data[4]) : 12;
+                            int loanPeriod = 12;
+                            try {
+                                loanPeriod = Integer.parseInt(data[4]); 
+                            } catch (Exception ex) {
+                                loanPeriod = 12;
+                            }
 
-                            LocalDate startDate = (data.length >= 4) ? LocalDate.parse(data[3], formatter)
-                                    : today.minusMonths(loanPeriod);
+                         
+                            LocalDate startDate = today.minusMonths(loanPeriod); // default
+                            try {
+                                startDate = LocalDate.parse(data[3], formatter);
+                            } catch (Exception ex) {
+                                startDate = today.minusMonths(loanPeriod);
+                            }
 
                             double monthlyPayment = totalAmount / loanPeriod;
                             long monthsPassed = ChronoUnit.MONTHS.between(startDate.withDayOfMonth(1), today.withDayOfMonth(1));
@@ -99,7 +109,6 @@ public class VIEW_RECORDS extends JFrame {
                 }
             }
         });
-
         logOutButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new LOG_IN_FORM();
