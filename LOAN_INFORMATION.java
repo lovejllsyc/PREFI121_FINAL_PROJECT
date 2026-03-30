@@ -18,7 +18,6 @@ public class LOAN_INFORMATION extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
 
-        // Already Have Loan Button
         alreadyHaveALoanButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -27,7 +26,6 @@ public class LOAN_INFORMATION extends JFrame {
             }
         });
 
-        // Proceed Button
         proceedButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String name = fullname.getText().trim();
