@@ -1,5 +1,5 @@
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.*
 import java.io.FileWriter;
 import java.io.IOException;
 
